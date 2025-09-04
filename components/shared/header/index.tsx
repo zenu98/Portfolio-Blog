@@ -19,7 +19,7 @@ const Header = () => {
               priority={true}
             />
             <span className="hidden lg:block font-bold text-2xl ml-3">
-              {APP_NAME}
+              마이포폴
             </span>
           </Link>
         </div>
