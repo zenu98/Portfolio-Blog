@@ -17,14 +17,18 @@ const ProductList = ({
 
   return (
     <div className="my-10 wrapper">
-      <h2 className="h2-bold mb-4">Main</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <h2 className="h2-bold pb-3 mb-4 border-b-2 border-gray-200 dark:border-gray-700">
+        Main
+      </h2>
+      <div className="grid pt-4 pb-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {limitedData.map((project: Project) => (
           <DataCard key={project.slug} data={project} />
         ))}
       </div>
-      <h2 className="h2-bold mb-4">Side</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <h2 className="h2-bold pb-3 mb-4 border-b-2 border-gray-200 dark:border-gray-700">
+        Side
+      </h2>
+      <div className="grid pt-4 pb-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {limitedSideData.map((project: Project) => (
           <DataCard key={project.slug} data={project} />
         ))}

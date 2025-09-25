@@ -17,7 +17,7 @@ const DataCard = ({ data }: { data: Project }) => {
   return (
     <Link href={`/post/${data.slug}`}>
       <Card className="w-full h-100 max-w-sm hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer">
-        <CardHeader className="p-0 flex-[2] relative overflow-hidden">
+        <CardHeader className="p-0 flex-[2] relative overflow-hidden border border-gray-100 dark:border-gray-700">
           <Image
             src={data.images[0]}
             alt={data.slug}

@@ -15,7 +15,7 @@ const projectData = {
       period: "2024.06 ~ 2025.01",
       personnel: "프론트 2명, 백엔드 2명",
       skills: ["React Native", "React Query", "Styled Component"],
-      type: "side",
+      type: "main",
       additionalInfo: {
         Android:
           "https://play.google.com/store/apps/details?id=com.datatourapp",
@@ -45,8 +45,13 @@ const projectData = {
       title: "포스팅나우 - 외식 리뷰 플랫폼",
       slug: "posting-now",
       images: [
-        "/images/sample-products/p1-1.jpeg",
-        "/images/sample-products/p1-2.jpg",
+        "/images/projects/postingnow/main.png",
+        "/images/projects/postingnow/full.png",
+        "/images/projects/postingnow/content.png",
+        "/images/projects/postingnow/upload.png",
+        "/images/projects/postingnow/mypage.png",
+        "/images/projects/postingnow/auth.png",
+        "/images/projects/postingnow/pay.png",
       ],
       period: "2024.09.05 ~ 2024.09.25",
       personnel: "프론트 1명, 백엔드 1명",
@@ -58,24 +63,135 @@ const projectData = {
       ],
       type: "main",
       additionalInfo: {
-        link: "https://postingnow.co.kr/",
+        Link: "https://postingnow.co.kr/",
       },
-      content: "",
+      content: `
+      한달 안에 운영가능한 웹사이트를 개발하는 프로젝트였습니다. 메인 페이지는 슬라이드 형식의 이미지 리스트와 캐러셀 형식의 광고 배너가 있는 구조로 설계되었습니다.
+
+      Figma를 통해 전체적인 웹사이트 구조를 분석한 결과, 슬라이드 형식의 이미지 리스트가 여러 곳에서 재사용되는 것을 확인했고, 개발 시간을 단축하기 위해 이 리스트를 컴포넌트화하여 빠르게 작업할 수 있도록 했습니다. 
+      
+      또한 반응형 웹사이트였기에 Grid를 활용해 해상도별로 이미지 리스트의 개수가 자동으로 조정되도록 구현했습니다.
+
+      이 프로젝트는 프론트엔드 작업을 처음부터 끝까지 단독으로 맡았고 개발 기간도 짧았기 때문에, 빠르고 효율적인 구현 방법에 가장 많은 고민을 했습니다. 동시에 실제 운영이 바로 시작되어야 했기에 완성도 역시 중요했습니다. 
+      
+      40개 이상의 API 통신과 즉각적인 피드백이 필요한 웹사이트였기에 Tanstack Query를 활용해 서버-클라이언트 데이터를 효과적으로 관리했습니다. 회원가입 폼은 React-Hook-Form을 사용하여 유효성 검사와 렌더링 최적화를 통해 개발 기간을 단축했습니다. 무엇보다 컴포넌트화에 중점을 두어 코드 재사용성을 높임으로써 프로젝트를 성공적으로 완료했습니다.
+      `,
     },
     {
       title: "상속재산분할협의서 작성사이트",
       slug: "inheritance-agreement",
       images: [
-        "/images/sample-products/p4-1.jpg",
-        "/images/sample-products/p4-2.jpg",
+        "/images/projects/inheritance/cover.png",
+        "/images/projects/inheritance/example1.png",
+        "/images/projects/inheritance/example2.png",
+        "/images/projects/inheritance/example3.png",
+        "/images/projects/inheritance/postcode.png",
       ],
       period: "2024.11",
       personnel: "프론트 1명",
       skills: ["ReactJS", "Vite", "React Hook Form", "Zustand"],
       type: "main",
       additionalInfo: {
-        link: "https://inheritance.kro.kr/",
+        Link: "https://inheritance.kro.kr/",
       },
+      content: `
+      변호사 법인에서 상속재산 분할 협의에 관한 복잡한 계산식을 간단하게 작성할 수 있도록 하는 사이트를 요청받아 단독으로 개발하게 되었습니다.
+
+복잡한 폼 형식과 엄격한 유효성 검사가 들어가야 하는 사이트이기 때문에 본격적으로 React-Hook-Form을 사용한 프로젝트 입니다. 이전에 작성한 폼을 기반으로 협의서 양식을 작성하여 인쇄할 수 있게 하였습니다.
+이 웹사이트는 서버와의 통신과 관계없이 클라이언트 데이터만으로 구성된 프로젝트입니다. 상속재산분할에 대한 복잡한 로직을 쉽게 계산하기 위해 의뢰받은 사이트로 이전 데이터가 다음 협의서 작성에 영향을 미치는 방식입니다. 그래서 Zustand를 이용하여 클라이언트 측 상태관리를 했으며 대부분의 형식이 폼으로 구성되어 있어 본격적으로 React-Hook-Form을 깊이 공부하고 적용하는데 좋았던 프로젝트 였습니다.
+
+또한 재산에 관련된 사항이기 때문에 계산로직에 문제가 있으면 안됐고 상속자,재산유형 등에 따라서 복잡한 계산이 필요하여 몇번이나 검토하면서 개발을 했던 프로젝트였습니다. 또한 협의서를 출력하는 기능이 있어야 했는데 처음에는 pdf 관련 라이브러리들을 찾아보았는데 관련 라이브러리에 심각한 버그가 있어 사용하는데 부적합하다고 판단하여 @media print 기능을 이용하여 출력/인쇄 기능을 구현하였습니다.
+      `,
+    },
+    {
+      title: "게임플래너 - 게임 출시일정 소개 플랫폼",
+      slug: "gameplanner",
+      images: [
+        "/images/projects/gameplanner/splashscreen.jpg",
+        "/images/projects/gameplanner/full.gif",
+        "/images/projects/gameplanner/main.jpg",
+        "/images/projects/gameplanner/adventure.jpg",
+        "/images/projects/gameplanner/category.jpg",
+        "/images/projects/gameplanner/detail1.jpg",
+        "/images/projects/gameplanner/detail2.jpg",
+      ],
+      period: "2024.03 ~ 2024.04",
+      personnel: "프론트 1명, 백엔드 1명",
+      skills: [
+        "React Native",
+        "Redux Toolkit",
+        "React Query",
+        "Typescript",
+        "Expo",
+      ],
+      type: "main",
+      additionalInfo: {},
+      content: "",
+    },
+    {
+      title: "Project AA",
+      slug: "ProjectAA",
+      images: [
+        "/images/projects/aa/project-aa-main.gif",
+        "/images/projects/aa/project-aa-detail.gif",
+        "/images/projects/aa/project-aa-price.gif",
+        "/images/projects/aa/project-aa-animation.gif",
+      ],
+      period: "2023.06",
+      personnel: "1인",
+      skills: ["ReactJS"],
+      type: "side",
+      additionalInfo: {},
+      content: "",
+    },
+    {
+      title: "캡스톤디자인 프로젝트",
+      slug: "Capstone",
+      images: [
+        "/images/projects/capstone/capstone-design-main.gif",
+        "/images/projects/capstone/capstone-design-d1.gif",
+        "/images/projects/capstone/capstone-design-d2.gif",
+        "/images/projects/capstone/capstone-design-d3.gif",
+      ],
+      period: "2023.06",
+      personnel: "1인",
+      skills: ["NextJS"],
+      type: "side",
+      additionalInfo: {},
+      content: "",
+    },
+    {
+      title: "포켓몬스터 상성 계산기",
+      slug: "pokemon",
+      images: [
+        "/images/projects/pokemon/full.gif",
+        "/images/projects/pokemon/open.gif",
+        "/images/projects/pokemon/first.png",
+        "/images/projects/pokemon/second.png",
+        "/images/projects/pokemon/third.png",
+        "/images/projects/pokemon/result.png",
+      ],
+      period: "2023.03",
+      personnel: "1인",
+      skills: ["ReactJS"],
+      type: "side",
+      additionalInfo: {},
+      content: "",
+    },
+    {
+      title: "동물단어 퍼즐",
+      slug: "puzzle",
+      images: [
+        "/images/projects/puzzle/first.gif",
+        "/images/projects/puzzle/second.gif",
+        "/images/projects/puzzle/third.gif",
+        "/images/projects/puzzle/firebase.png",
+      ],
+      period: "2023.03",
+      personnel: "1인",
+      skills: ["ReactJS"],
+      type: "side",
+      additionalInfo: {},
       content: "",
     },
   ],
