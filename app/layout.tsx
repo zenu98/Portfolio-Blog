@@ -12,7 +12,7 @@ const notoSansKR = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | NextJS-Pro`,
+    template: `%s | 마이포폴`,
     default: APP_NAME,
   },
   description: APP_DESCRIPTION,

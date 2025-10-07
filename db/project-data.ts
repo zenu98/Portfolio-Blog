@@ -1,4 +1,20 @@
+import { hashSync } from "bcrypt-ts-edge";
+
 const projectData = {
+  users: [
+    {
+      name: "Seo",
+      email: "admin@example.com",
+      password: hashSync("123456", 10),
+      role: "admin",
+    },
+    {
+      name: "Hee",
+      email: "user@example.com",
+      password: hashSync("123456", 10),
+      role: "user",
+    },
+  ],
   projects: [
     {
       title: "여행대로 - 국내여행 플랫폼",
@@ -126,7 +142,17 @@ const projectData = {
       ],
       type: "main",
       additionalInfo: {},
-      content: "",
+      content: `
+      ### 게임플래너
+
+> 프론트엔드,백엔드 개발자 둘이서 앱의 첫 구상부터 완성까지 함께 직접 제작한 앱입니다. React Native를 통해 모바일 환경에서의 개발,빌드,배포 단계까지 모두 경험하였고 백엔드 API와의 통신과 협업 경험을 가지며 팀 프로젝트로서의 의의도 갖추었습니다.
+
+
+- 플레이스토어 배포까지 준비되어 마지막 비공개테스트 절차 중에 있음.
+- React Native를 사용하여 모바일 환경에서의 앱 제작 경험
+- 백엔드 개발자와 같이 진행하여 팀 프로젝트로 협업 경험
+- Google Play Store 배포 경험
+      `,
     },
     {
       title: "Project AA",
