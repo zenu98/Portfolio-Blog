@@ -13,7 +13,6 @@ import { Product, Project } from "@/types";
 import { Badge } from "@/components/ui/badge";
 
 const DataCard = ({ data }: { data: Project }) => {
-  console.log("제목 : ", data);
   return (
     <Link href={`/post/${data.slug}`}>
       <Card className="w-full h-100 max-w-sm hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer">

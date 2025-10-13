@@ -1,0 +1,6 @@
+-- CreateEnum
+CREATE TYPE "TechType" AS ENUM ('LANGUAGE', 'WEB', 'MOBILE', 'STATE_MANAGEMENT', 'STYLING', 'BACKEND');
+
+-- AlterTable
+ALTER TABLE "techs" ADD COLUMN     "order" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "type" "TechType" NOT NULL DEFAULT 'WEB';

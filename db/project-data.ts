@@ -168,7 +168,14 @@ const projectData = {
       skills: ["ReactJS"],
       type: "side",
       additionalInfo: {},
-      content: "",
+      content: `
+      ### 지도 기반 앱
+
+- 네이버지도 API 연동
+- JSON 토큰 기반 로그인/로그아웃 기능
+- 학교 주변 카페 가격비교 기능 구현
+
+      `,
     },
     {
       title: "캡스톤디자인 프로젝트",
@@ -184,7 +191,15 @@ const projectData = {
       skills: ["NextJS"],
       type: "side",
       additionalInfo: {},
-      content: "",
+      content: `
+        ### SKHU 캡스톤디자인 프로젝트
+
+- 조원들의 작품들을 보고 열람할 수 있는 반응형 웹페이지
+- Parallax Scroll 애니메이션 구현
+- 각 작품의 특징에 따라 그리드, 슬라이드 형식 등으로 작품을 페이지에서 묘사
+- Next.JS로 구현하여 파일기반 라우팅 시스템을 처음으로 경험해 보았고 정적생성페이지 구현
+- 완성 이후 Typescript로 리빌딩
+      `,
     },
     {
       title: "포켓몬스터 상성 계산기",
@@ -199,10 +214,16 @@ const projectData = {
       ],
       period: "2023.03",
       personnel: "1인",
-      skills: ["ReactJS"],
+      skills: ["ReactJS", "Redux Toolkit", "Firebase"],
       type: "side",
       additionalInfo: {},
-      content: "",
+      content: `
+        ### 포켓몬 상성 계산기
+
+- React Full-Page Scroll
+- CSS 애니메이션 구현
+- Firebase 데이터베이스와 비동기 통신  
+    `,
     },
     {
       title: "동물단어 퍼즐",
@@ -215,10 +236,17 @@ const projectData = {
       ],
       period: "2023.03",
       personnel: "1인",
-      skills: ["ReactJS"],
+      skills: ["ReactJS", "Redux Toolkit", "Firebase"],
       type: "side",
       additionalInfo: {},
-      content: "",
+      content: `
+      ### 동물 단어 퍼즐
+
+- 첫 리액트 토이 프로젝트
+- **Firebase Realtime DB**
+- Context API 상태관리
+- 다양한 React Hook 경험
+      `,
     },
   ],
 };

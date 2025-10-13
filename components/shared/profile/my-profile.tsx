@@ -1,10 +1,29 @@
 import Image from "next/image";
 
-const MyProfile = () => {
+const MyProfile = ({ tech }: { tech: any }) => {
+  console.log("!@#!@# :", tech);
+  const typeNames: Record<string, string> = {
+    LANGUAGE: "💬 언어",
+    WEB: "🌐 웹",
+    MOBILE: "📱 모바일",
+    STATE_MANAGEMENT: "🔄 상태관리",
+    STYLING: "🎨 스타일링",
+    BACKEND: "⚙️ 백엔드",
+  };
+
+  const typeOrder = [
+    "LANGUAGE",
+    "WEB",
+    "MOBILE",
+    "STATE_MANAGEMENT",
+    "STYLING",
+    "BACKEND",
+  ];
+
   return (
     <div className=" wrapper flex flex-col w-full min-h-120 gap-8">
       <div className="justify-start">
-        <Image src="/images/logo.svg" alt="123" width={300} height={300} />
+        <Image src="/images/logo.png" alt="123" width={300} height={300} />
       </div>
       <div className="pt-6 pb-6  dark:bg-[oklch(0.208_0.042_265.755)] rounded-lg">
         <p
@@ -72,6 +91,52 @@ const MyProfile = () => {
               <span className=" font-semibold text-lg">
                 데이터랩스 : 2024.06 ~ 2025.01
               </span>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-4">
+          <h2 className=" text-2xl font-bold flex items-center gap-3">
+            💼 기술
+          </h2>
+          <div className="border border-gray-200 dark:border-none sm:max-w-1/2 dark:bg-[oklch(0.208_0.042_265.755)] rounded-lg p-6">
+            <div className="flex  items-center gap-3 mb-2">
+              <div className="w-3 h-3"></div>
+              <div className="space-y-6">
+                {typeOrder.map((type) => {
+                  const items = tech[type];
+                  if (!items || items.length === 0) return null;
+
+                  return (
+                    <div key={type}>
+                      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                        {type}
+                      </h3>
+                      <div className="flex flex-wrap gap-3">
+                        {items.map((item: any) => (
+                          <div
+                            key={item.id}
+                            className="flex flex-col items-center"
+                          >
+                            <div className="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-600 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-110 cursor-pointer">
+                              <Image
+                                src={item.icon}
+                                alt={item.name}
+                                width={50}
+                                height={50}
+                              />
+                            </div>
+                            <div className="text-center text-xs mt-1">
+                              {item.name.split(" ").map((word, index) => (
+                                <div key={index}>{word}</div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

@@ -3,6 +3,14 @@
 
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+enum TechType {
+  LANGUAGE
+  WEB
+  MOBILE
+  STATE_MANAGEMENT
+  STYLING
+  BACKEND
+}
 
 generator client {
   provider        = "prisma-client-js"
@@ -50,9 +58,11 @@ model Project {
 }
 
 model Tech {
-  id   Int    @id @default(autoincrement())
-  name String @unique
-  icon String
+  id    Int      @id @default(autoincrement())
+  name  String   @unique
+  icon  String
+  type  TechType @default(WEB)
+  order Int      @default(0)
 
   @@map("techs")
 }

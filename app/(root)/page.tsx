@@ -6,6 +6,7 @@ import {
   getAllProjects,
   getMainProjects,
   getSideProjects,
+  getTechsByType,
 } from "@/lib/actions/product.actions";
 
 const Homepage = async () => {
@@ -13,10 +14,12 @@ const Homepage = async () => {
   const allProjects = await getAllProjects();
   const mainProjects = await getMainProjects();
   const sideProjects = await getSideProjects();
+  const techs = await getTechsByType();
+
   // console.log(sampleData);
   return (
     <>
-      <MyProfile />
+      <MyProfile tech={techs} />
       <ProductList
         main={mainProjects}
         side={sideProjects}
