@@ -7,7 +7,7 @@
 
 @layer utilities {
   .wrapper {
-    @apply max-w-7xl lg:mx-auto p-5 md:px-10 w-full;
+    @apply max-w-7xl lg:mx-auto pt-3 pb-3 p-5 md:p-5 md:px-10 w-full;
   }
 
   .flex-start {
@@ -25,18 +25,22 @@
     @apply font-bold text-3xl lg:text-4xl;
   }
 
-  .h2-bold {
-    @apply font-bold text-2xl lg:text-3xl;
+  .h2-responsive {
+    @apply text-lg md:text-xl lg:text-2xl;
   }
 
-  .h3-bold {
-    @apply font-bold text-xl lg:text-2xl;
+  .h3-responsive {
+    @apply text-base md:text-lg lg:text-xl;
+  }
+  .text-responsive {
+    @apply text-sm md:text-base lg:text-lg;
   }
 }
 /* 기본 폰트를 한국어 폰트로 설정 */
 body {
   font-family: var(--font-noto-sans-kr), var(--font-inter), system-ui,
     sans-serif;
+  @apply text-sm md:text-base;
 }
 
 /* 영어 전용 텍스트 */
