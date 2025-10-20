@@ -17,6 +17,28 @@ const projectData = {
   ],
   projects: [
     {
+      title: "마이포폴 - 포트폴리오 블로그",
+      slug: "mypopol",
+      images: ["/images/projects/mypopol/mypopl.png"],
+      period: "2024.09 ~ 진행중",
+      personnel: "단독개발",
+      skills: [
+        "NextJS",
+        "Tailwind CSS",
+        "ShadCN",
+        "Vercel",
+        "Prisma",
+        "NeonDB",
+      ],
+      type: "main",
+      additionalInfo: {
+        Link: "https://portfolio-blog-git-main-zenu98s-projects.vercel.app",
+      },
+      content: `
+        추가중
+      `,
+    },
+    {
       title: "여행대로 - 국내여행 플랫폼",
       slug: "tourapp",
       images: [
@@ -158,7 +180,6 @@ const projectData = {
       title: "Project AA",
       slug: "ProjectAA",
       images: [
-        "/images/projects/aa/project-aa-main.gif",
         "/images/projects/aa/project-aa-detail.gif",
         "/images/projects/aa/project-aa-price.gif",
         "/images/projects/aa/project-aa-animation.gif",
