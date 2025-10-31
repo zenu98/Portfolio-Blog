@@ -84,6 +84,7 @@ const projectData = {
       slug: "posting-now",
       images: [
         "/images/projects/postingnow/main.png",
+        "/images/projects/postingnow/worklist.png",
         "/images/projects/postingnow/full.png",
         "/images/projects/postingnow/content.png",
         "/images/projects/postingnow/upload.png",
@@ -163,7 +164,9 @@ const projectData = {
         "Expo",
       ],
       type: "main",
-      additionalInfo: {},
+      additionalInfo: {
+        Github: "https://github.com/zenu98/GamePlanner",
+      },
       content: `
       ### 게임플래너
 

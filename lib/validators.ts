@@ -35,5 +35,5 @@ export const insertProjectSchema = z.object({
 
 export const signInForm = z.object({
   email: z.email({ message: "잘못된 이메일입니다." }),
-  password: z.string().min(8, "비밀번호는 최소 8글자 이상이어야 됩니다."),
+  password: z.string().min(6, "비밀번호는 최소 8글자 이상이어야 됩니다."),
 });

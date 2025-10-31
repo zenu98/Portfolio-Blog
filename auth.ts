@@ -28,6 +28,7 @@ export const config = {
             email: credentials.email as string,
           },
         });
+
         if (user && user.password) {
           const isMatch = compareSync(
             credentials.password as string,

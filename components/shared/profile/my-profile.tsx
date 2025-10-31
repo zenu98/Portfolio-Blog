@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const MyProfile = ({ tech }: { tech: any }) => {
-  console.log("!@#!@# :", tech);
   const typeNames: Record<string, string> = {
     LANGUAGE: "💬 언어",
     WEB: "🌐 웹",

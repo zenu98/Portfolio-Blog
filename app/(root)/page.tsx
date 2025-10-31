@@ -16,7 +16,6 @@ const Homepage = async () => {
   const sideProjects = await getSideProjects();
   const techs = await getTechsByType();
 
-  // console.log(sampleData);
   return (
     <>
       <MyProfile tech={techs} />
