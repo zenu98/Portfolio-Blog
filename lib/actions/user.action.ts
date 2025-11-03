@@ -5,7 +5,7 @@ import { signIn, signOut } from "@/auth";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 
 export async function signInWithCredentials(
-  prevState: unknown,
+  prevState: any,
   formData: FormData
 ) {
   console.log("\n========== 로그인 시도 ==========");
