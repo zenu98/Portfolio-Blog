@@ -27,8 +27,13 @@ export const insertProjectSchema = z.object({
   personnel: z.string().min(1, "인원을 입력하세요"),
   skills: z.array(z.string()).min(1, "최소 하나의 스킬"),
   type: z.string().min(1, "타입을 선택하세요"),
-  description: z.string().nullable(),
+  content: z.string().min(1, "내용을 입력하세요"),
   additionalInfo: z.any().nullable(),
+});
+
+// Updating Project
+export const updateProjectSchema = insertProjectSchema.extend({
+  id: z.string().min(1, "ID는 필수입니다."),
 });
 
 // 회원가입

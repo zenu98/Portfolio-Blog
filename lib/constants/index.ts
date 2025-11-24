@@ -10,3 +10,17 @@ export const signInDefaultValues = {
   email: "",
   password: "",
 };
+
+export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 12;
+
+export const projectDefaultValues = {
+  title: "",
+  slug: "",
+  images: [],
+  period: "",
+  personnel: "",
+  skills: [],
+  type: "",
+  content: "",
+  additionalInfo: null,
+};

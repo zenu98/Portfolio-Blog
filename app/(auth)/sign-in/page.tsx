@@ -37,7 +37,7 @@ const SignInPage = async () => {
           </Link>
           <CardTitle className="text-center">로그인</CardTitle>
           <CardDescription className="text-center">
-            계정에 로그인하세요
+            관리자 페이지에 접근하려면 계정에 로그인하세요
           </CardDescription>
           <CardContent className="space-y-4">
             <CredentialsSignInForm />

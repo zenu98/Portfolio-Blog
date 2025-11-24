@@ -1,8 +1,11 @@
 "use server";
-import { LATEST_PRODUCTS_LIMIT } from "../constants";
+import { LATEST_PRODUCTS_LIMIT, PAGE_SIZE } from "../constants";
 import { prisma } from "@/db/prisma";
 import { convertPlainObject } from "../utils";
 import { TechType } from "../generated/prisma";
+import { revalidatePath } from "next/cache";
+import { insertProjectSchema, updateProjectSchema } from "../validators";
+import z, { formatError } from "zod";
 export async function getTechs() {
   const data = await prisma.tech.findMany({
     orderBy: [{ type: "asc" }, { order: "asc" }],
@@ -62,4 +65,92 @@ export async function getProjectBySlug(slug: string) {
   return await prisma.project.findFirst({
     where: { slug: slug },
   });
+}
+export async function getProjectById(projectId: string) {
+  const data = await prisma.project.findFirst({
+    where: { id: projectId },
+  });
+  return convertPlainObject(data);
+}
+export async function getAllProjectAtAdmin({
+  query,
+  limit = PAGE_SIZE,
+  page,
+  category,
+}: {
+  query: string;
+  limit?: number;
+  page: number;
+  category?: string;
+}) {
+  const data = await prisma.project.findMany({
+    skip: (page - 1) * limit,
+    take: limit,
+    orderBy: { createdAt: "desc" },
+  });
+  const dataCount = await prisma.project.count();
+
+  return {
+    data,
+    totalPages: Math.ceil(dataCount / limit),
+  };
+}
+
+//Delete
+
+export async function deleteProject(id: string) {
+  try {
+    const projectExists = await prisma.project.findFirst({
+      where: { id },
+    });
+    if (!projectExists) throw new Error("프로젝트가 존재하지 않습니다.");
+
+    await prisma.project.delete({ where: { id } });
+    revalidatePath("/admin/projects");
+
+    return {
+      success: true,
+      message: "성공적으로 삭제되었습니다.",
+    };
+  } catch (error) {
+    return { success: false, message: error };
+  }
+}
+
+export async function createProject(data: z.infer<typeof insertProjectSchema>) {
+  try {
+    const project = insertProjectSchema.parse(data);
+    await prisma.project.create({ data: project });
+
+    revalidatePath("/admin/projects");
+    return {
+      success: true,
+      message: "프로젝트가 성공적으로 생성되었습니다.",
+    };
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
+}
+
+// Update Product
+export async function updateProject(data: z.infer<typeof updateProjectSchema>) {
+  try {
+    const project = updateProjectSchema.parse(data);
+    const projectExists = await prisma.project.findFirst({
+      where: { id: project.id },
+    });
+    if (!projectExists) throw new Error("프로젝트가 존재하지 않습니다.");
+    await prisma.project.update({
+      where: { id: project.id },
+      data: project,
+    });
+
+    revalidatePath("/admin/projects");
+    return {
+      success: true,
+      message: "프로젝트가 성공적으로 수정되었습니다.",
+    };
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
 }

@@ -19,12 +19,7 @@ const Homepage = async () => {
   return (
     <>
       <MyProfile tech={techs} />
-      <ProductList
-        main={mainProjects}
-        side={sideProjects}
-        title="Asd"
-        limit={4}
-      />
+      <ProductList main={mainProjects} side={sideProjects} title="Asd" />
     </>
   );
 };

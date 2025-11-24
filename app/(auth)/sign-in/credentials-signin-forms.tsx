@@ -60,12 +60,12 @@ const CredentialsSignInForm = () => {
         {data && !data.success && (
           <div className="text-center text-destructive">{data.message}</div>
         )}
-        <div className="text-sm text-center text-muted-foreground">
+        {/* <div className="text-sm text-center text-muted-foreground">
           계정이 없으신가요?
           <Link href="/sign-up" target="_self" className="link">
             회원가입
           </Link>
-        </div>
+        </div> */}
       </div>
     </form>
   );
