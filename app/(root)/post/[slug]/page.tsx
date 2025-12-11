@@ -47,7 +47,7 @@ const PostDetailsPage = async (props: {
               </li>
             </ul>
 
-            {Object.keys(project.additionalInfo).length > 0 && (
+            {Object.entries(project.additionalInfo).some(([_, url]) => url) && (
               <div className="mt-4">
                 <h4 className="font-medium mb-2">프로젝트 링크</h4>
                 <div className="flex flex-row gap-2 flex-wrap">

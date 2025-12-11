@@ -5,6 +5,10 @@ import { cn } from "@/lib/utils";
 
 const PostImages = ({ images }: { images: string[] }) => {
   const [current, setCurrent] = useState(0);
+
+  const isGif = (url: string) => {
+    return url.toLowerCase().endsWith(".gif");
+  };
   return (
     <div className="flex flex-col items-center gap-4">
       <Image
@@ -12,6 +16,7 @@ const PostImages = ({ images }: { images: string[] }) => {
         alt="project image"
         width={1000}
         height={1000}
+        unoptimized={isGif(images[current])}
         className="w-full max-w-4xl object-contain max-h-[80vh] sm:h-[70vh]"
       />
       <div className="w-full overflow-x-auto sm:overflow-x-visible pb-4 md:pb-0">
@@ -26,7 +31,13 @@ const PostImages = ({ images }: { images: string[] }) => {
               )}
               onClick={() => setCurrent(index)}
             >
-              <Image src={image} alt="image" fill className="object-cover" />
+              <Image
+                src={image}
+                alt="image"
+                fill
+                className="object-cover"
+                unoptimized={isGif(image)}
+              />
             </div>
           ))}
         </div>
