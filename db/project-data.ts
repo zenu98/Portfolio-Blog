@@ -202,30 +202,6 @@ const projectData = {
       `,
     },
     {
-      title: "캡스톤디자인 프로젝트",
-      slug: "Capstone",
-      images: [
-        "/images/projects/capstone/capstone-design-main.gif",
-        "/images/projects/capstone/capstone-design-d1.gif",
-        "/images/projects/capstone/capstone-design-d2.gif",
-        "/images/projects/capstone/capstone-design-d3.gif",
-      ],
-      period: "2023.06",
-      personnel: "1인",
-      skills: ["NextJS"],
-      type: "side",
-      additionalInfo: {},
-      content: `
-        ### SKHU 캡스톤디자인 프로젝트
-
-- 조원들의 작품들을 보고 열람할 수 있는 반응형 웹페이지
-- Parallax Scroll 애니메이션 구현
-- 각 작품의 특징에 따라 그리드, 슬라이드 형식 등으로 작품을 페이지에서 묘사
-- Next.JS로 구현하여 파일기반 라우팅 시스템을 처음으로 경험해 보았고 정적생성페이지 구현
-- 완성 이후 Typescript로 리빌딩
-      `,
-    },
-    {
       title: "포켓몬스터 상성 계산기",
       slug: "pokemon",
       images: [
