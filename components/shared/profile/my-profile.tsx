@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Highlight from "./highlight";
 
 const MyProfile = ({ tech }: { tech: any }) => {
   const typeNames: Record<string, string> = {
@@ -37,6 +38,60 @@ const MyProfile = ({ tech }: { tech: any }) => {
 외식 리뷰 플랫폼 구현 및 운영 등 다양한 프론트엔드 프로젝트를 성공적으로 완수했습니다.
       새로운 기술을 배우고 실무에 적용하는 것을 즐기며, 팀과의 원활한
             협업을 통해 더 나은 결과물을 만들어내는 것을 추구합니다.`}
+          </p>
+        </div>
+      </div>
+      <div>
+        <h1 className="h2-responsive font-bold flex items-center gap-3 border-b-2 border-gray-200 dark:border-gray-400 py-4">
+          📚 자기소개
+        </h1>
+
+        <div className="space-y-4 py-4">
+          <p className="leading-relaxed whitespace-pre-wrap dark:text-gray-100">
+            안녕하십니까. 저는 스타트업에서 8개월 가량{" "}
+            <Highlight>실무경험</Highlight>이 있는 프론트엔드 개발자입니다.
+            <br />
+            실무에서 몇가지 <Highlight>핵심프로젝트</Highlight>를 맡은 바
+            있으며, 프론트엔드 개발을 전담하여 책임지어 프로젝트를 진행한 경험을
+            가지고 있습니다.
+          </p>
+
+          <p className="leading-relaxed dark:text-gray-100">
+            신입개발자로 입사했지만 실무에 들어가고나서는 그 이상을 해내려고
+            항상 노력해왔습니다.
+            <br />
+            저는 프론트엔드 개발을 할 때 유저친화적인{" "}
+            <Highlight>UI/UX</Highlight>를 구현하는 것을 목표로 하며 그 과정에
+            있어서 <Highlight>코드품질과 성능</Highlight>을 올리는 것을 중요하게
+            생각합니다.
+            <br />
+            이러한 생각을 가진 이유는 스타트업이라는 회사 특징 상 시간과의
+            싸움을 했던 프로젝트들이 상당히 많았고 이를 위해 많은 실패와 경험을
+            겪었기 때문입니다.
+            <br />
+            이를 위해 동료개발자 뿐만이 아니라 <Highlight>디자인 팀</Highlight>
+            과도 적극적으로 커뮤니케이션 하여 반복되는 작업과 비효율적인
+            프로세스 구조 등을 다같이 개선해 나가는 작업을 했습니다.
+          </p>
+
+          <p className="leading-relaxed dark:text-gray-100">
+            구체적으로는 <Highlight>여행대로</Highlight> 라는 여행관련 플랫폼의
+            개발 및 유지보수에 참여했습니다.
+            <br />
+            처음 입사했을 때 기존 앱의 UI는 엄지손가락 만한 크기 안에 여러
+            버튼이 있고 각 화면이 너무 복잡하게 얽혀있는 구조였습니다.
+            <br />
+            이와 관련하여 디자인팀과 동료 개발자들과의 회의를 통하여{" "}
+            <Highlight>전체적인 UI 개편 작업을 주도</Highlight>하여 성공적으로
+            진행했습니다.
+            <br />
+            이어서 앱의 중요 서비스인 앱 내{""} <Highlight>채팅 기능</Highlight>
+            과 소셜로그인 등의 추가기능, 코드 개선, 성능 최적화 등을 맡아
+            개발하였습니다.
+            <br />
+            이후 회사의 새 프로젝트를 단독으로 담당하여{" "}
+            <Highlight>한달의 시간안에</Highlight>
+            외식리뷰 플랫폼을 개발하여 서비스 한 경험으로 이어지게 되었습니다.
           </p>
         </div>
       </div>
