@@ -6,6 +6,26 @@
 @tailwind utilities;
 
 @layer utilities {
+  @keyframes shimmer {
+    0% {
+      background-position: -400% 0;
+    }
+    100% {
+      background-position: 400% 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s ease-in-out infinite;
+    background: linear-gradient(
+      to right,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 400% 100%;
+  }
+
   .wrapper {
     @apply max-w-7xl lg:mx-auto pt-3 pb-3 p-5 md:p-5 md:px-10 w-full;
   }
@@ -41,8 +61,8 @@
 }
 /* 기본 폰트를 한국어 폰트로 설정 */
 body {
-  font-family: var(--font-noto-sans-kr), var(--font-inter), system-ui,
-    sans-serif;
+  font-family:
+    var(--font-noto-sans-kr), var(--font-inter), system-ui, sans-serif;
   @apply text-sm md:text-base;
 }
 
