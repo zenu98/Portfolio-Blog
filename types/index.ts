@@ -9,4 +9,5 @@ export type Product = z.infer<typeof insertProductSchema> & {
 export type Project = z.infer<typeof insertProjectSchema> & {
   id: string;
   createdAt: Date;
+  isOngoing: boolean;
 };

@@ -34,7 +34,9 @@ const DataCard = ({ data }: { data: Project }) => {
               </Badge>
             ))}
           </div>
-          <CardDescription>{data.period}</CardDescription>
+          <CardDescription>
+            {data.isOngoing ? "진행중..." : data.period}
+          </CardDescription>
 
           {/* <div className="flex-between gap-4">
           <p>{data.rating} Stars</p>

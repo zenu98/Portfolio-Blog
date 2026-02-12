@@ -154,3 +154,26 @@ export async function updateProject(data: z.infer<typeof updateProjectSchema>) {
     return { success: false, message: formatError(error) };
   }
 }
+
+//  update ongoing
+export async function toggleOngoing(id: string) {
+  try {
+    const project = await prisma.project.findFirst({
+      where: { id },
+    });
+    if (!project) throw new Error("프로젝트가 존재하지 않습니다.");
+    await prisma.project.update({
+      where: { id: id },
+      data: { isOngoing: !project.isOngoing },
+    });
+
+    revalidatePath("/admin/projects");
+
+    return {
+      success: true,
+      message: "프로젝트가 성공적으로 수정되었습니다.",
+    };
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
+}

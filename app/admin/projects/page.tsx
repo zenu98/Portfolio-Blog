@@ -15,6 +15,7 @@ import {
 import { formatId } from "@/lib/utils";
 import DeleteDialog from "@/components/shared/project/delete-dialog";
 import { requireAdmin } from "@/lib/auth-guard";
+import OngoingToggle from "@/components/shared/project/ongoing-toggle";
 
 const AdminProjectsPage = async (props: {
   searchParams: Promise<{
@@ -70,6 +71,7 @@ const AdminProjectsPage = async (props: {
                   title={project.title}
                   action={deleteProject}
                 />
+                <OngoingToggle id={project.id} isOngoing={project.isOngoing} />
               </TableCell>
             </TableRow>
           ))}
