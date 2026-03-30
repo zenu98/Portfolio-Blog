@@ -46,7 +46,7 @@ const MyProfile = ({ tech }: { tech: any }) => {
           📚 자기소개
         </h1>
 
-        <div className="space-y-4 py-4">
+        <div className="space-y-4 py-4 ">
           <p className="leading-relaxed whitespace-pre-wrap dark:text-gray-100">
             안녕하십니까. 저는 스타트업에서 8개월 가량{" "}
             <Highlight>실무경험</Highlight>이 있는 프론트엔드 개발자입니다.
@@ -67,9 +67,8 @@ const MyProfile = ({ tech }: { tech: any }) => {
             <br />
             이러한 생각을 가진 이유는 스타트업이라는 회사 특징 상 시간과의
             싸움을 했던 프로젝트들이 상당히 많았고 이를 위해 많은 실패와 경험을
-            겪었기 때문입니다.
-            <br />
-            이를 위해 동료개발자 뿐만이 아니라 <Highlight>디자인 팀</Highlight>
+            겪었기 때문입니다. 이를 위해 동료개발자 뿐만이 아니라{" "}
+            <Highlight>디자인 팀</Highlight>
             과도 적극적으로 커뮤니케이션 하여 반복되는 작업과 비효율적인
             프로세스 구조 등을 다같이 개선해 나가는 작업을 했습니다.
           </p>
@@ -90,8 +89,8 @@ const MyProfile = ({ tech }: { tech: any }) => {
             개발하였습니다.
             <br />
             이후 회사의 새 프로젝트를 단독으로 담당하여{" "}
-            <Highlight>한달의 시간안에</Highlight>
-            외식리뷰 플랫폼을 개발하여 서비스 한 경험으로 이어지게 되었습니다.
+            <Highlight>한달의 시간안에</Highlight> 외식리뷰 플랫폼을 개발하여
+            서비스 한 경험으로 이어지게 되었습니다.
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import ProductList from "@/components/shared/data/product-list";
 import MyProfile from "@/components/shared/profile/my-profile";
+import MyProject from "@/components/shared/profile/my-project";
 import sampleData from "@/db/sample-data";
 import {
   getLatestProducts,
@@ -20,6 +21,7 @@ const Homepage = async () => {
     <>
       <MyProfile tech={techs} />
       <ProductList main={mainProjects} side={sideProjects} title="Asd" />
+      {/* <MyProject /> */}
     </>
   );
 };
