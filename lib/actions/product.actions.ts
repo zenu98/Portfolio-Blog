@@ -43,10 +43,16 @@ export async function getAllProjects() {
 }
 
 export async function getMainProjects() {
-  return await prisma.project.findMany({
+  const projects = await prisma.project.findMany({
     where: { type: "main" },
     orderBy: { createdAt: "desc" },
   });
+
+  // 여행대로를 맨 앞으로
+  return [
+    ...projects.filter((p) => p.title.includes("여행대로")),
+    ...projects.filter((p) => !p.title.includes("여행대로")),
+  ];
 }
 
 export async function getSideProjects() {
