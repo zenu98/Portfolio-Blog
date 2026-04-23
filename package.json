@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "npmrc": "legacy-peer-deps=true",
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
     "@gsap/react": "^2.1.2",
