@@ -8,7 +8,7 @@ import Menu from "./menu";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 h-16 w-full border-b ">
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 w-full border-b ">
       <div className="flex h-full px-4 justify-between items-center">
         <div className="flex-start">
           <Link href="/" className="flex-start">
