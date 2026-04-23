@@ -9,22 +9,24 @@ const UserButton = async () => {
   if (session) {
     return (
       <div className="flex w-full items-center gap-2">
-        <Button asChild className="w-20 py-4 px-2 h-4">
-          <Link href="/admin/projects">관리자</Link>
-        </Button>
+        <button className="flex w-20 py-4 px-2 h-4 text-white font-semibold items-center justify-center">
+          <Link href="/admin/projects">Admin</Link>
+        </button>
 
         <form action={signOutUser} className="flex-1">
-          <Button className="w-20 py-4 px-2 h-4">로그아웃</Button>
+          <button className="flex w-20 py-4 px-2 h-4 text-white font-semibold items-center justify-center">
+            Logout
+          </button>
         </form>
       </div>
     );
   }
   return (
-    <Button asChild>
+    <button className="flex w-20 py-4 px-2 h-4 text-white font-semibold items-center justify-center">
       <Link href="/sign-in">
-        <UserIcon /> 로그인
+        <UserIcon /> Login
       </Link>
-    </Button>
+    </button>
   );
 };
 

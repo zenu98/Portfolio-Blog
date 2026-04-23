@@ -1,39 +1,74 @@
 import { Product, Project } from "@/types";
 import DataCard from "./data-card";
+import {
+  getMainProjects,
+  getSideProjects,
+} from "@/lib/actions/product.actions";
+import SpiralGallery from "@/components/spiral";
+import PortfolioText from "../portfolio-text";
 
-const ProductList = ({
-  main,
-  side,
-  title,
-  limit,
-}: {
-  main: Project[];
-  side: Project[];
-  title?: string;
-  limit?: number;
-}) => {
-  const limitedData = limit ? main.slice(0, limit) : main;
-  const limitedSideData = limit ? side.slice(0, limit) : side;
+const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
+  const mainProjects = await getMainProjects();
+  const sideProjects = await getSideProjects();
+  const allImages = [
+    ...mainProjects.map((p) => p.images),
+    ...sideProjects.map((p) => p.images),
+  ]
+    .flat()
+    .filter(Boolean);
 
+  const limitedData = limit ? mainProjects.slice(0, limit) : mainProjects;
+  const limitedSideData = limit ? sideProjects.slice(0, limit) : sideProjects;
+  const letters = [
+    { char: "P", scaleY: 1.3 },
+    { char: "O", scaleY: 1.4 },
+    { char: "R", scaleY: 1.5 },
+    { char: "T", scaleY: 1.5 },
+    { char: "F", scaleY: 1.5 },
+    { char: "O", scaleY: 1.4 },
+    { char: "L", scaleY: 1.3 },
+    { char: "I", scaleY: 1.2 },
+    { char: "O", scaleY: 1.2 },
+  ];
   return (
-    <div className="my-10 wrapper">
-      <h2 className="h2-bold pb-3 mb-4 border-b-2 border-gray-200 dark:border-gray-700">
-        Main
-      </h2>
-      <div className="grid pt-4 pb-8 grid-cols-2 gap-4">
-        {limitedData.map((project: Project) => (
-          <DataCard key={project.slug} data={project} />
-        ))}
+    <div className="flex flex-col page-container bg-[#e76f51] ">
+      <div className="w-full h-[120svh] relative ">
+        <PortfolioText />
+
+        <div className="absolute inset-0">
+          <SpiralGallery images={allImages} />
+        </div>
       </div>
-      <h2 className="h2-bold pb-3 mb-4 border-b-2 border-gray-200 dark:border-gray-700">
-        Side
-      </h2>
-      <div className="grid pt-4 pb-4 grid-cols-2  gap-4">
-        {limitedSideData.map((project: Project) => (
-          <DataCard key={project.slug} data={project} />
-        ))}
+      <div className="w-full flex flex-col lg:flex-row mt-25 border-t-1 border-white/30">
+        <div className="w-full lg:w-1/2 p-8 leading-none font-black font-english text-[200px] sm:text-[300px] lg:text-[400px]">
+          <p>MAIN</p>
+        </div>
+
+        <div className="w-full lg:w-1/2 flex items-center justify-center border-t-1 lg:border-t-0 lg:border-l-1 border-white/30 p-8">
+          <div className="grid grid-cols-2 gap-5 w-full max-w-lg p-8">
+            {limitedData.map((project: Project) => (
+              <div key={project.slug} className="aspect-[3/4] w-full">
+                <DataCard data={project} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      {main.length === 0 && side.length === 0 && <div>no-data</div>}
+
+      <div className="w-full flex flex-col lg:flex-row mt-25 border-t-1 border-white/30">
+        <div className="w-full lg:w-1/2 flex items-center justify-center border-t-1 border-r-1 lg:border-t-0 lg:border-l-1 border-white/30 p-8">
+          <div className="grid grid-cols-2 gap-5 w-full max-w-lg p-8">
+            {limitedSideData.map((project: Project) => (
+              <div key={project.slug} className="aspect-[3/4] w-full">
+                <DataCard data={project} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="w-full lg:w-1/2 p-8 leading-none font-black font-english text-[200px] sm:text-[300px] lg:text-[400px]">
+          <p>SIDE</p>
+        </div>
+      </div>
     </div>
   );
 };

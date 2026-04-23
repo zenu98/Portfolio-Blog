@@ -5,21 +5,22 @@ import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/lib/constants";
 import ModeToggle from "./mode-toggle";
 import Menu from "./menu";
+
 const Header = () => {
   return (
-    <header className="w-full border-b">
-      <div className="wrapper flex-between">
+    <header className="fixed top-0 left-0 right-0 z-40 h-16 w-full border-b ">
+      <div className="flex h-full px-4 justify-between items-center">
         <div className="flex-start">
           <Link href="/" className="flex-start">
             <Image
               src="/images/logo.png"
               alt={`${APP_NAME} logo`}
-              width={48}
-              height={48}
+              width={24}
+              height={24}
               priority={true}
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded"
+              className="w-8 h-8 rounded"
             />
-            <span className="hidden lg:block font-bold text-2xl ml-3">
+            <span className="hidden lg:block font-bold text-2xl ml-3 text-white">
               마이포폴
             </span>
           </Link>

@@ -15,41 +15,42 @@ import { Badge } from "@/components/ui/badge";
 const DataCard = ({ data }: { data: Project }) => {
   return (
     <Link href={`/post/${data.slug}`}>
-      <Card className="flex flex-row w-full h-50  hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer">
-        <CardHeader className="p-0 flex-[1] relative overflow-hidden border border-gray-100 dark:border-gray-700">
-          <Image
-            src={data.images[0]}
-            alt={data.slug}
-            fill
-            className="object-cover"
-            priority={true}
-          />
-        </CardHeader>
-        <CardContent className="flex-[2] flex flex-col justify-between py-6">
-          <div>
-            <CardTitle className="text-xl">{data.title}</CardTitle>
-            <CardDescription>
-              {data.isOngoing ? "진행중..." : data.period}
-            </CardDescription>
-          </div>
-          <div className="flex flex-wrap gap-1">
-            {data.skills.map((skill, index) => (
-              <Badge key={index} variant="secondary" className="text-sm">
-                {skill}
-              </Badge>
-            ))}
+      <div className="group w-full h-full [perspective:1000px]">
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <CardTitle className="text-xl">{data.title}</CardTitle>
+
+          <div className="absolute inset-0 [backface-visibility:hidden] overflow-hidden">
+            <Image
+              src={data.images[0]}
+              alt={data.slug}
+              fill
+              className="object-cover"
+              priority={true}
+            />
+            <div className="absolute inset-0 bg-black/85" />
+
+            <div className="absolute inset-0 flex flex-col justify-end p-4">
+              <CardTitle className="text-xl text-white">{data.slug}</CardTitle>
+            </div>
           </div>
 
-          {/* <div className="flex-between gap-4">
-          <p>{data.rating} Stars</p>
-          {data.stock > 0 ? (
-            <ProductPrice value={+data.price} />
-          ) : (
-            <p className="text-destructive">품절</p>
-          )}
-        </div> */}
-        </CardContent>
-      </Card>
+          {/* 뒷면 - 내용 */}
+          <div className="absolute inset-0 bg-black/85 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl overflow-hidden  flex flex-col justify-between p-6">
+            <div>
+              <CardDescription>
+                {data.isOngoing ? "진행중..." : data.period}
+              </CardDescription>
+            </div>
+            <div className="flex flex-wrap gap-1">
+              {data.skills.map((skill, index) => (
+                <Badge key={index} variant="secondary" className="text-sm">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </Link>
   );
 };

@@ -1,27 +1,17 @@
+import HomeClient from "@/components/home-client";
 import ProductList from "@/components/shared/data/product-list";
+import IntroPage from "@/components/shared/profile/intro";
 import MyProfile from "@/components/shared/profile/my-profile";
-import MyProject from "@/components/shared/profile/my-project";
-import sampleData from "@/db/sample-data";
-import {
-  getLatestProducts,
-  getAllProjects,
-  getMainProjects,
-  getSideProjects,
-  getTechsByType,
-} from "@/lib/actions/product.actions";
+import Techs from "@/components/shared/profile/techs";
 
-const Homepage = async () => {
-  const latestProducts = await getLatestProducts();
-  const allProjects = await getAllProjects();
-  const mainProjects = await getMainProjects();
-  const sideProjects = await getSideProjects();
-  const techs = await getTechsByType();
-
+const Homepage = () => {
   return (
     <>
-      <MyProfile tech={techs} />
-      <ProductList main={mainProjects} side={sideProjects} title="Asd" />
-      {/* <MyProject /> */}
+      <HomeClient>
+        <IntroPage />
+        <Techs />
+        <ProductList title="Asd" />
+      </HomeClient>
     </>
   );
 };

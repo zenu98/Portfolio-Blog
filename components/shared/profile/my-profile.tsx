@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Highlight from "./highlight";
+import { getTechsByType } from "@/lib/actions/product.actions";
 
-const MyProfile = ({ tech }: { tech: any }) => {
+const MyProfile = async () => {
+  const tech = await getTechsByType();
+
   const typeNames: Record<string, string> = {
     LANGUAGE: "💬 언어",
     WEB: "🌐 웹",
@@ -21,26 +24,7 @@ const MyProfile = ({ tech }: { tech: any }) => {
   ];
 
   return (
-    <div className=" wrapper flex flex-col w-full min-h-120 gap-8">
-      <div className="justify-start">
-        <Image src="/images/me.jpg" alt="123" width={177} height={236} />
-      </div>
-      <div className="pt-6 pb-6 dark:bg-[oklch(0.208_0.042_265.755)] rounded-lg">
-        <div className="space-y-6 border-t-4 pt-6 sm:border-t-0 sm:border-l-4 sm:pt-0 sm:pl-6 sm:border-gray-400">
-          {/* fade-in 애니메이션 */}
-          <p className="text-responsive font-medium leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700">
-            웹, 모바일 등 다양한 프로젝트와 스타트업 경험이 있는 프론트엔드
-            개발자입니다.
-          </p>
-
-          <p className="text-responsive leading-loose text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 whitespace-pre-line">
-            {`실무 기간 동안 여행 플랫폼 앱 운영 및 실시간 채팅 시스템 구축, 
-외식 리뷰 플랫폼 구현 및 운영 등 다양한 프론트엔드 프로젝트를 성공적으로 완수했습니다.
-      새로운 기술을 배우고 실무에 적용하는 것을 즐기며, 팀과의 원활한
-            협업을 통해 더 나은 결과물을 만들어내는 것을 추구합니다.`}
-          </p>
-        </div>
-      </div>
+    <div className="page-container flex flex-col w-full min-h-120 gap-8 bg-[#f8d058]">
       <div>
         <h1 className="h2-responsive font-bold flex items-center gap-3 border-b-2 border-gray-200 dark:border-gray-400 py-4">
           📚 자기소개

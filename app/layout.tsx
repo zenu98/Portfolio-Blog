@@ -36,6 +36,19 @@ const pretendard = localFont({
   ],
   variable: "--font-pretendard",
 });
+const hardbop = localFont({
+  src: [
+    {
+      path: "../assets/styles/fonts/hardbop/fonnts.com-hardbop-bold.woff2",
+      weight: "700",
+    },
+    {
+      path: "../assets/styles/fonts/hardbop/fonnts.com-hardbop-ultrabold.woff2",
+      weight: "900",
+    },
+  ],
+  variable: "--font-hardbop",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -53,7 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${pretendard.className}  antialiased`}>
+      <body
+        className={`${pretendard.className} ${hardbop.variable}  antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
