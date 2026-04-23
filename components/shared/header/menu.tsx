@@ -43,9 +43,7 @@ const Menu = () => {
               </Link>
             </Button> */}
             <Button asChild>
-              <Link href="/sign-in">
-                <UserIcon /> 로그인
-              </Link>
+              <Link href="/sign-in">Login</Link>
             </Button>
           </SheetContent>
         </Sheet>

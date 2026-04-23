@@ -23,9 +23,7 @@ const UserButton = async () => {
   }
   return (
     <button className="flex w-20 py-4 px-2 h-4 text-white font-semibold items-center justify-center">
-      <Link href="/sign-in">
-        <UserIcon /> Login
-      </Link>
+      <Link href="/sign-in">Login</Link>
     </button>
   );
 };
