@@ -19,7 +19,16 @@ const HomeClient = ({ children }: { children: React.ReactNode[] }) => {
     lenisRef.current?.lenis?.on("scroll", ScrollTrigger.update);
     gsap.ticker.add(update);
     gsap.ticker.lagSmoothing(0);
-    ScrollTrigger.refresh();
+
+    // 페이지 완전 로드 후 refresh
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
+    // 약간의 딜레이 추가
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
 
     return () => gsap.ticker.remove(update);
   }, []);

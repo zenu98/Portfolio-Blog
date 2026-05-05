@@ -44,7 +44,7 @@ const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
           <p>MAIN</p>
         </div>
 
-        <div className="w-full lg:w-1/2 flex items-center justify-center border-t-1 lg:border-t-0 lg:border-l-1 border-white/30 p-8">
+        <div className="w-full lg:w-1/2 flex items-center justify-center  lg:border-t-0 lg:border-l-1 border-white/30 p-8">
           <div className="grid grid-cols-2 gap-5 w-full max-w-lg p-8">
             {limitedData.map((project: Project) => (
               <div key={project.slug} className="aspect-[3/4] w-full">
@@ -55,8 +55,8 @@ const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col lg:flex-row mt-25 border-t-1 border-white/30">
-        <div className="w-full lg:w-1/2 flex items-center justify-center border-t-1 border-r-1 lg:border-t-0 lg:border-l-1 border-white/30 p-8">
+      <div className="w-full flex flex-col-reverse lg:flex-row mt-25 border-t-1 border-white/30">
+        <div className="w-full lg:w-1/2 flex items-center justify-center  border-r-1 lg:border-t-0 lg:border-l-1 border-white/30 p-8">
           <div className="grid grid-cols-2 gap-5 w-full max-w-lg p-8">
             {limitedSideData.map((project: Project) => (
               <div key={project.slug} className="aspect-[3/4] w-full">
