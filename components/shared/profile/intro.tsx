@@ -2,37 +2,36 @@ import Image from "next/image";
 
 const IntroPage = () => {
   return (
-    <div className="flex flex-col sm:flex-row page-container bg-[#8498ac] w-full min-h-svh">
-      <div className="flex flex-col flex-1  border-r-1 border-white/30 p-4 gap-6">
+    <div className="flex flex-col sm:flex-row page-container bg-[#8498ac] w-full min-h-svh max-w-[2560px] ">
+      <div className="flex flex-col flex-1  border-r-1 border-white/30 p-4 justify-evenly">
         <Image
           src="/images/me.jpg"
           alt="123"
           width={177 * 1}
           height={236 * 1}
+          className="w-[120px] sm:w-[150px] lg:w-[177px] 2xl:w-[250px] h-auto"
         />
         <div className="text-white">
-          <div className="flex flex-col gap-1 mb-8">
-            <span className="text-2xl font-bold">
+          <div className="flex flex-col gap-1 mb-8 text-responsive">
+            <span className=" font-bold">
               소프트웨어공학 / 디지털컨텐츠 학사
             </span>
-            <span className="font-semibold">2023년 08월 졸업</span>
-            <span className="font-semibold">성공회대학교 - 서울특별시</span>
-            <span className="font-semibold">
-              데이터랩스 : 2024.06 ~ 2025.01
-            </span>
+            <span className=" ">2023년 08월 졸업</span>
+            <span className=" ">성공회대학교 - 서울특별시</span>
+            <span className=" ">데이터랩스 : 2024.06 ~ 2025.01</span>
           </div>
-          <div className="space-y-4 w-4/5 ">
+          <div className="w-4/5 ">
             <div className="border border-gray-200 dark:border-none dark:bg-[oklch(0.208_0.042_265.755)] rounded-lg p-6 space-y-4">
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 text-responsive">
                   <span className="font-medium min-w-[80px]">생년월일 :</span>
                   <span className="">1998.07.05</span>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 text-responsive">
                   <span className="font-medium min-w-[80px]">전화번호 :</span>
                   <span className="">010-7363-2820</span>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 text-responsive">
                   <span className="font-medium min-w-[80px]">이메일 :</span>
                   <span className="">zenu987@gmail.com</span>
                 </div>
@@ -42,7 +41,7 @@ const IntroPage = () => {
         </div>
       </div>
       <div className="flex-1  flex flex-col px-4">
-        <div className="leading-none font-black flex-1 tracking-wide h-auto font-english border-b-1 border-white/30 text-[200px] text-black ">
+        <div className="leading-none font-black flex-1 tracking-wide h-auto font-english border-b-1 border-white/30 text-[200px] 2xl:text-[400px] 3xl:text-[500px] text-black ">
           <p>INTRO</p>
         </div>
         <div className="flex flex-1 text-right justify-end items-center">

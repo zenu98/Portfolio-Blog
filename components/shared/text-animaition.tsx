@@ -35,7 +35,7 @@ const TextAnimation = () => {
   return (
     <div
       ref={textRef}
-      className="flex-1 border-b-1 sm:border-b-0 sm:border-r-1   border-white/30 text-[200px] leading-none font-english tracking-wide pr-8 text-black font-bold"
+      className="flex-1 border-b-1 sm:border-b-0 sm:border-r-1   border-white/30 text-[200px] 2xl:text-[400px] 3xl:text-[500px] leading-none font-english tracking-wide pr-8 text-black font-bold"
     >
       USED TECHS
     </div>

@@ -40,12 +40,11 @@ const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
         </div>
       </div>
       <div className="w-full flex flex-col lg:flex-row mt-25 border-t-1 border-white/30">
-        <div className="w-full lg:w-1/2 p-8 leading-none font-black font-english text-[200px] sm:text-[300px] lg:text-[400px]">
+        <div className="w-full lg:w-1/2 p-8 leading-none font-black font-english text-[200px] sm:text-[300px] lg:text-[400px] 2xl:text-[500px] 3xl:text-[800px]">
           <p>MAIN</p>
         </div>
-
-        <div className="w-full lg:w-1/2 flex items-center justify-center  lg:border-t-0 lg:border-l-1 border-white/30 p-8">
-          <div className="grid grid-cols-2 gap-5 w-full max-w-lg p-8">
+        <div className="w-full lg:w-1/2 flex items-center justify-center lg:border-t-0 lg:border-l-1 border-white/30">
+          <div className="grid grid-cols-2 gap-5 max-w-lg xl:max-w-2xl w-full p-8">
             {limitedData.map((project: Project) => (
               <div key={project.slug} className="aspect-[3/4] w-full">
                 <DataCard data={project} />
@@ -57,7 +56,7 @@ const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
 
       <div className="w-full flex flex-col-reverse lg:flex-row mt-25 border-t-1 border-white/30">
         <div className="w-full lg:w-1/2 flex items-center justify-center  border-r-1 lg:border-t-0 lg:border-l-1 border-white/30 p-8">
-          <div className="grid grid-cols-2 gap-5 w-full max-w-lg p-8">
+          <div className="grid grid-cols-2 gap-5 w-full max-w-lg  xl:max-w-2xl p-8">
             {limitedSideData.map((project: Project) => (
               <div key={project.slug} className="aspect-[3/4] w-full">
                 <DataCard data={project} />
@@ -65,7 +64,7 @@ const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
             ))}
           </div>
         </div>
-        <div className="w-full lg:w-1/2 p-8 leading-none font-black font-english text-[200px] sm:text-[300px] lg:text-[400px]">
+        <div className="w-full lg:w-1/2 p-8 leading-none font-black font-english text-[200px] lg:text-[400px] 2xl:text-[500px] 3xl:text-[800px]">
           <p>SIDE</p>
         </div>
       </div>

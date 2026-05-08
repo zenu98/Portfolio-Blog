@@ -38,12 +38,12 @@ const PortfolioText = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full relative font-english text-white font-black h-[200px] sm:h-[400px] lg:h-[560px]"
+      className="w-full relative font-english text-white font-black "
     >
       {letters.map((char, i) => (
         <div
           key={i}
-          className="letter text-[180px] sm:text-[300px] lg:text-[500px]"
+          className="letter text-[180px] sm:text-[300px] lg:text-[500px] xl:text-[600px] 2xl:text-[750px] 3xl:text-[1000px]"
           style={{
             position: "absolute",
             top: 0,
