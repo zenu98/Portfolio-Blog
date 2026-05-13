@@ -3,11 +3,13 @@ import DataCard from "./data-card";
 import {
   getMainProjects,
   getSideProjects,
+  getSpiralImages,
 } from "@/lib/actions/product.actions";
 import SpiralGallery from "@/components/spiral";
 import PortfolioText from "../portfolio-text";
 
 const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
+  const spiralImages = await getSpiralImages();
   const mainProjects = await getMainProjects();
   const sideProjects = await getSideProjects();
   const allImages = [
@@ -36,7 +38,7 @@ const ProductList = async ({ limit }: { title?: string; limit?: number }) => {
         <PortfolioText />
 
         <div className="absolute inset-0">
-          <SpiralGallery images={allImages} />
+          <SpiralGallery images={spiralImages.map((i) => i.url)} />
         </div>
       </div>
       <div className="w-full flex flex-col lg:flex-row mt-25 border-t-1 border-white/30">

@@ -42,6 +42,10 @@ export async function getAllProjects() {
   return convertPlainObject(data);
 }
 
+export async function getSpiralImages() {
+  return await prisma.spiralImage.findMany();
+}
+
 export async function getMainProjects() {
   const projects = await prisma.project.findMany({
     where: { type: "main" },
